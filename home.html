@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizal Lopez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }    
+        main {
+            padding: 20px;
+        }
+
+        .card-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            width: calc(33.33% - 20px);
+            background-color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        .card iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .summary p {
+            margin: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .mission-vision-card {
+            width: 96%; /* Adjusted width */
+            position: relative;
+            padding: 30px; /* Adjusted padding */
+            margin: 0 auto 20px auto; /* Centered with margin auto */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-vision-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://static.wixstatic.com/media/4704c6_7fb45a9bb0764912aa9f5f3d583502fd~mv2.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            opacity: 0.5; /* Adjust opacity as needed */
+            z-index: -1; /* Ensure the background is behind the content */
+        }
+
+        .mission-vision-card-content {
+            position: relative;
+            z-index: 1; /* Ensure the content is above the background */
+        }
+
+        .mission-vision-card h2,
+        .mission-vision-card p {
+            color: #333;
+            text-align: center;
+        }
+
+        .welcome-section {
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+            align-items: center; /* Center the content vertically */
+            margin-bottom: 20px; /* Add some space at the bottom */
+            position: relative; /* Add relative positioning */
+        }
+
+        .welcome-text {
+            background-color: #132043;
+            color: white;
+            padding: 50px;
+            font-size: 40px;
+            text-align: center; /* Center the text */
+        }
+
+        .welcome-section img {
+            max-width: 100%; /* Ensure the image does not exceed its container */
+            height: auto; /* Maintain aspect ratio */
+            margin-left: 20px; /* Add some spacing between text and image */
+        }
+
+        .full-width-section {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 50px;
+            background-color: #fff;
+            color: #333;
+            font-size: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .full-width-section img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .full-width-section div {
+            flex: 1;
+        }
+
+        .full-width-section p {
+            margin: 10px 0;
+            text-align: justify;
+            padding-right: 40px;
+            font-size: 18px;;
+        }
+
+        .full-width-section h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <div class="welcome-section">
+            <div class="welcome-text" style="margin-right: -20px">
+                <p>Welcome to<br> Brgy. Rizal<br>Poblacion</p>
+            </div>
+            <img src="https://static.wixstatic.com/media/bdc22e_ea6d3b65db084d21939427e49b6f08f2~mv2.jpeg/v1/fill/w_679,h_453,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/photo1675224894.jpeg" alt="Welcome to Rizal">
+        </div>
+    
+        <div class="full-width-section">
+           
+            <div>
+                <h3>Message from the Barangay Captain<br>Hon. Reynaldo A. Salumbides Jr.</h3>
+                <p>I extend a warm welcome to all visitors to our Barangay's official website. As the elected Barangay Captain, it brings me great pleasure to provide you with a platform where you can gain insight into our community, its programs, services, and upcoming events. Our Barangay is characterized by its vibrancy and diversity, and our primary goal is to foster a safe, secure, and inclusive environment for all residents.</p>
+                <p>We are dedicated to delivering essential services such as healthcare, education, and public safety, and we continuously strive to enhance the quality of life within our Barangay. Through this website, you will discover valuable information regarding our Barangay's history, our elected officials, and the various initiatives we have undertaken to promote community development.</p>
+                <p>Additionally, you will find updates on forthcoming activities, events, and programs designed to benefit our residents. As your Barangay Captain, I am committed to serving our community and ensuring that the needs of our residents are met. Should you have any inquiries, concerns, or feedback, please do not hesitate to contact me or any of our Barangay officials.</p>
+                <p>Thank you for taking the time to visit our website, and I trust that you will find the information provided here both useful and informative.</p>
+                <br>
+                <p>Sincerely,</p>
+                <p>Hon. Reynaldo A. Salumbides Jr.<br>Barangay Captain</p>
+            </div>
+            <img src="/assets/officials/kap.jpg" style="height: 400px; width: 400px" alt="Barangay Captain">
+        </div>
+        
+        <br>
+        
+        <div class="mission-vision-card">
+            <h2>ABOUT OUR BARANGAY</h2>
+            <h2>Location of the barangay and its mission and vision</h2>
+         
+        </div>
+    
+        <div class="card-line">
+            <div class="card">
+                <h2 style="text-align: center">Mission</h2>
+                <p style="text-align: justify">Pangangalagaan at itataguyod ang mga karapatan ng Lopezeño sa kalidad at matuwid na serbisyo kung saan ang ganap na programa ukol sa EDUKASYON, ALTERNATIBONG KABUHAYAN, PANGANGALAGA SA KALUSUGAN at MALUSOG NA KAPALIGIRAN ay pananagutan ng mapagkakatiwalaan at makatarungang mga pinuno upang mapanatili ang maunlad na pamayanan.</p>
+            </div>
+            
+            <div class="card">
+                <iframe
+                width="100%"
+                height="100%"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=122.2533,13.8778,122.2633,13.8878&amp;layer=mapnik&amp;marker=13.8828,122.2583">
+                </iframe>
+            </div>
+            
+            <div class="card">
+                <h2 style="text-align: center">Vision</h2>
+                <p style="text-align: justify">Isang Barangay na may takot sa Diyos, sumaksi sa malinaw at pantay na pamamahala upang matugunan ang mga mithiin tungo sa isang mapayapa, mabunga at maunlad na pamayanan.</p>
+            </div>
+        </div>
+        
+        <div class="card-line">
+            <div class="card">
+                <h2 style="text-align: center">Summary Data</h2>
+                <p><strong>Type:</strong> Barangay</p>
+                    <p><strong>Group of Island:</strong> Luzon</p>
+                    <p><strong>Region:</strong> CALABARZON (Rehiyon IV‑A)</p>
+                    <p><strong>Lalawigan:</strong> Quezon</p>
+                    <p><strong>Municipality:</strong> Lopez</p>
+                    <p><strong>Barangay:</strong> Rizal Poblacion</p>
+                    <p><strong>Postal code:</strong> 4316</p>
+                    <p><strong>Population (2020):</strong> 3,432</p>
+                            </div>
+            
+            <div class="card">
+                <h2 style="text-align: center">Maps</h2>
+                <div class="summary">
+                    <p style="text-align: justify">The Barangay of Rizal (Poblacion) is located in Lopez, a municipality in the province of Quezon. Barangay RIZAL, Poblacion has a total area of approximately (117,998.25) square meters or 5.83 hectares. Even the smallest LGU the barangay creates its own Budget. It is not dependent on handouts from the city, municipality, or province.</p>
+
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 style="text-align: center">Demographic</h2>
+                <p style="text-align: justify">The statistical study of human populations in Barangay Rizal Poblacion Lopez Quezon by the use of census to analyze the size, movement, and structure of populations in the said barangay. Its population, as determined by the 2020 Census, was 661. This represented 0.70% of the total population of Lopez.</p>
+            </div>
+        </div>
+    </main>
+    
+    <div id="footer"></div>
+    
+    <script>
+        function loadHTML(url, elementId) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error();
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            loadHTML('reusable/header.html', 'header');
+            loadHTML('reusable/footer.html', 'footer');
+            const sessionActive = localStorage.getItem('session');
+            if (!sessionActive || sessionActive !== 'true') {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+    </body>
+    </html>

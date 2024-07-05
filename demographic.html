@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demographic</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reusable/footer.css">
+    <link rel="stylesheet" href="reusable/header.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* styles.css */
+
+/* Style for the search form */
+form#searchForm {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the search input field */
+#searchInput {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+    width: 300px; /* Adjust width as needed */
+}
+
+/* Style for the search button */
+#searchForm button {
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #4CAF50; /* Green background color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover effect for the search button */
+#searchForm button:hover {
+    background-color: #45a049;
+}
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        canvas {
+            max-width: 600px; /* Adjust the max-width as needed */
+            margin: 0 auto; /* Center the charts */
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="demographic-page">
+        <main>
+            <form id="searchForm" action="#" method="GET">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+            <h1>Demographic</h1>
+            <section>
+                <h2>Households</h2>
+                <p>The household population of Rizal in the 2015 Census was 3,842 broken down into 778 households or an average of 4.94 members per household.</p>
+                <p><strong>Total Population in 2024</strong></p>
+                <p>Number of Families: 1,521</p>
+                <p>Total of Households: 1,143</p>
+                <p>Total of Population: 3,970</p>
+                <canvas id="householdsChart" width="300" height="300"></canvas>
+            </section>
+
+            <section>
+                <h2>Main Religion</h2>
+                <table class="demographic-table">
+                    <thead>
+                        <tr>
+                            <th>Religion</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Roman Catholic</td>
+                            <td>84.82%</                        </td>
+                        </tr>
+                        <tr>
+                            <td>Saksi ni Jehova</td>
+                            <td>1.34%</td>
+                        </tr>
+                        <tr>
+                            <td>Iglesia ni Cristo</td>
+                            <td>4.47%</td>
+                        </tr>
+                        <tr>
+                            <td>Islam</td>
+                            <td>0.44%</td>
+                        </tr>
+                        <tr>
+                            <td>Protestant</td>
+                            <td>1.78%</td>
+                        </tr>
+                        <tr>
+                            <td>Baptist</td>
+                            <td>2.68%</td>
+                        </tr>
+                        <tr>
+                            <td>Others</td>
+                            <td>4.47%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <canvas id="religionChart"width="300" height="300"></canvas>
+              
+            </section>
+
+            <section>
+                <h2>Population by Age Group</h2>
+                <p>According to the 2015 Census, the age group with the highest population in Rizal is 15 to 19, with 429 individuals. Conversely, the age group with the lowest population is 80 and over, with 36 individuals.</p>
+                <canvas id="ageGroupChart"width="400" height="300"></canvas>
+            </section>
+
+            <section>
+                <h2>Economic Data</h2>
+                <h3>I. Annual Barangay Income</h3>
+                <p>₱ 5,217,481.00</p>
+                <p><strong>Source of Income:</strong></p>
+                <p>Internal (RPT, Business, etc): ₱ 298,000.00</p>
+                <p>External:</p>
+                <p>Internal Revenue Allotment (IRA): ₱ 3,714,481.00</p>
+                <p>Iba pang Pinagmumulan: ₱ 1,205,000.00</p>
+
+                <h3>II. BDRRM Fund (2019) - 5% of Brgy Fund</h3>
+                <p>₱ 200,874.00</p>
+                <p>70% of 5%: ₱ 140,611.80</p>
+                <p>30% of 5% (Quick Response Fund): ₱ 60,262.20</p>
+                <canvas id="incomeChart"width="300" height="300"></canvas>
+            </section>
+
+            <section>
+                <h2>Main Occupation</h2>
+                <table class="demographic-table">
+                    <thead>
+                        <tr>
+                            <th>Occupation</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Farming</td>
+                            <td>5%</td>
+                        </tr>
+                        <tr>
+                            <td>Employment</td>
+                            <td>35%</td>
+                        </tr>
+                        <tr>
+                            <td>Fishing</td>
+                            <td>5%</td>
+                        </tr>
+                        <tr>
+                            <td>Carpentry/Construction</td>
+                            <td>10%</td>
+                        </tr>
+                        <tr>
+                            <td>Entrepreneurship</td>
+                            <td>35%</td>
+                        </tr>
+                        <tr>
+                            <td>Mechanics/Driving</td>
+                            <td>5%</td>
+                        </tr>
+                        <tr>
+                            <td>Other (STL collection, Junk/Scrap Collection, appliance repair, etc.)</td>
+                            <td>5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <canvas id="occupationChart"width="400" height="300"></canvas>
+            </section>
+
+            <section>
+                <h2>Political Facts</h2>
+                <p>Covering District: 4th District of Quezon</p>
+                <p>No. of SONA: 7</p>
+                <p>No. of Sitio: 2 (Pukpukan at Duungan)</p>
+                <p>No. of Registered Voters: 1,999 (2019 National Election)</p>
+                <p>Blg. ng Presintong Panghalalan: 14 Presinto (33 A/B; 34 A/B; 35 A/B; 36/AB; 37 A/B; 38 A/B; at 39 A/B)</p>
+            </section>
+
+            <section>
+                <h2>Basic Facilities</h2>
+                <p>Electricity: QUEZELCO 1</p>
+                <p>Water Irrigation: Lopez Water District</p>
+                <p>Communication: Mobile Phone / Telepono</p>
+                <p>Transportation: Bus, Jeep, Van, Tricycle, Motorcycle, Motorbike</p>
+                <p>Education: Eastern Tayabas College</p>
+                <p>Health: Barangay Health Center</p>
+                <p>Sports: Multi-Purpose Covered Court</p>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        function loadHTML(url, elementId) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadHTML('reusable/header.html', 'header');
+            loadHTML('reusable/footer.html', 'footer');
+            const sessionActive = localStorage.getItem('session');
+            if (!sessionActive || sessionActive !== 'true') {
+                window.location.href = 'index.html';
+            }
+
+            // Household Chart
+            const householdsCtx = document.getElementById('householdsChart').getContext('2d');
+            new Chart(householdsCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Families', 'Households'],
+                    datasets: [{
+                        label: 'Count',
+                        data: [1521, 766],
+                        backgroundColor: ['#4e73df', '#1cc88a']
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Main Religion Chart
+            const religionCtx = document.getElementById('religionChart').getContext('2d');
+            new Chart(religionCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Roman Catholic', 'Saksi ni Jehova', 'Iglesia ni Cristo', 'Islam', 'Protestant', 'Baptist', 'Others'],
+                    datasets: [{
+                        label: 'Percentage',
+                        data: [84.82, 1.34, 4.47, 0.44, 1.78, 2.68, 4.47],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#C9CBCF']
+                    }]
+                }
+            });
+
+            // Population by Age Group Chart
+            const ageGroupCtx = document.getElementById('ageGroupChart').getContext('2d');
+            new Chart(ageGroupCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['0-14', '15-19', '20-29', '30-39', '40-49', '50-59', '60-69', '70-79', '80+'],
+                    datasets: [{
+                        label: 'Population',
+                        data: [400, 429, 350, 300, 250, 200, 150, 100, 36],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#C9CBCF', '#FF6384', '#36A2EB']
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Economic Data Chart
+            const incomeCtx = document.getElementById('incomeChart').getContext('2d');
+            new Chart(incomeCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Internal Income', 'IRA', 'Other Sources'],
+                    datasets: [{
+                        label: 'Income (₱)',
+                        data: [298000, 3714481, 1205000],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                    }]
+                }
+            });
+
+            // Main Occupation Chart
+            const occupationCtx = document.getElementById('occupationChart').getContext('2d');
+            new Chart(occupationCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Farming', 'Employment', 'Fishing', 'Carpentry/Construction', 'Entrepreneurship', 'Mechanics/Driving', 'Other'],
+                    datasets: [{
+                        label: 'Percentage',
+                        data: [5, 35, 5, 10, 35, 5, 5],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#C9CBCF']
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

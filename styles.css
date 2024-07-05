@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #FFF5EE
+}
+
+.demographic-page {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #FFF5EE;
+    color: #333;
+}
+
+.demographic-page #header, 
+.demographic-page #footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.demographic-page main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    
+    box-shadow: none;
+    border-radius: 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+.demographic-page section {
+    margin-bottom: 20px;
+}
+
+.demographic-page h1, 
+.demographic-page h2 {
+    color: #132043;
+}
+
+.demographic-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.demographic-page h2 {
+    border-bottom: 2px solid #132043;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.demographic-page ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.demographic-page ul li {
+    background: #132043;
+    color: #fff;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.demographic-page ul li:nth-child(even) {
+    background: #0056b3;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.demographic-page .demographic-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+}
+
+.demographic-page .demographic-table thead {
+    background-color: #132043;
+    color: #fff;
+}
+
+.demographic-page .demographic-table th, 
+.demographic-page .demographic-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.demographic-page .demographic-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.demographic-page .demographic-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.demographic-page .demographic-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+}

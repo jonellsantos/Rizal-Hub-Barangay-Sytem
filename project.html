@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reusable/footer.css">
+    <link rel="stylesheet" href="reusable/header.css">
+    <title>More</title>
+    <style>
+
+        body {
+            margin: 0;
+            background: #FFF5EE;
+            text-align: center;
+            font-family: sans-serif;
+            color: #132043;
+        }
+        h1 {
+           margin-bottom: 20px;
+        }
+
+        .container {
+            position: relative;
+            width: 500px;
+            margin: 100px auto 0 auto;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 1s ease;
+        }
+        .carousel img {
+            width: 500px; 
+        height: auto; 
+        }
+        #etc-info {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <br>
+        <div id="etc-info">
+            <h2>CONSTRUCTION OF DRAINAGE CANAL ZONE 7</h2>        
+        </div>
+        <div class="container">
+            <div class="carousel">
+                <img src="https://static.wixstatic.com/media/bdc22e_db159276175d40f0b84cca83d391b50e~mv2.jpg/v1/fill/w_727,h_471,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/bdc22e_db159276175d40f0b84cca83d391b50e~mv2.jpg" alt="Image 1">
+            </div>
+        </div>
+        <br>
+        <hr style="max-width: 800px;">
+        <div id="etc-info">
+            <h2>IMPROVEMENT OF DAYCARE CENTER</h2>        
+        </div>
+        <div class="container">
+            <div class="carousel">
+                <img src="https://static.wixstatic.com/media/bdc22e_a651d011ceca4f96bd62967a186f7289~mv2.jpg/v1/fill/w_727,h_471,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/bdc22e_a651d011ceca4f96bd62967a186f7289~mv2.jpg" alt="Image 1">
+            </div>
+        </div>
+        <br>
+        <hr style="max-width: 800px;">
+        <div id="etc-info">
+            <h2>CONSTRUCTION OF PATHWAY</h2>        
+        </div>
+        <div class="container">
+            <div class="carousel">
+                <img src="https://static.wixstatic.com/media/bdc22e_eec49bb9799a41909b5aa9c36adc8d40~mv2.jpg/v1/fill/w_727,h_471,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/bdc22e_eec49bb9799a41909b5aa9c36adc8d40~mv2.jpg" alt="Image 1">
+            </div>
+        </div>
+        <br>
+
+       
+    </main>
+
+    <div id="footer"></div> 
+
+    <script>
+        function loadHTML(url, elementId) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadHTML('reusable/header.html', 'header');
+            loadHTML('reusable/footer.html', 'footer');
+            const sessionActive = localStorage.getItem('session');
+            if (!sessionActive || sessionActive !== 'true') {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+     
+    <!-- <script>
+        const carousel = document.querySelector('.carousel');
+        let counter = 1;
+
+        setInterval(() => {
+            carousel.style.transform = `translateX(-${counter * 100}%)`;
+            counter++;
+            if (counter === 9) {
+                counter = 0;
+            }
+        }, 3000); // Change image every 3 seconds
+    </script> -->
+</body>
+</html>

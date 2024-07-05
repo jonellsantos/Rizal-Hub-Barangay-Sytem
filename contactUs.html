@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reusable/footer.css">
+    <link rel="stylesheet" href="reusable/header.css">
+    <style>
+        body{
+            background-color: #FFF5EE
+        }
+        #contact {
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+            align-items: flex-start;
+            padding: 40px; /* Increase padding for spacing */
+            max-width: 800px; /* Adjust as needed */
+            margin: 0 auto; /* Center the section on the page */
+        }
+        #contact-left {
+            flex: 1;
+            margin-right: 20px;
+        }
+        #contact-right {
+            flex: 1;
+        }
+        #contact h2 {
+            font-size: 32px; /* Increase font size */
+            margin-bottom: 20px; /* Increase spacing */
+            color: #132043; /* Change text color to blue */
+        }
+        #contact p {
+            font-style: normal;
+            color: #555;
+            font-size: 18px; /* Adjust font size */
+            margin-bottom: 10px; /* Add margin bottom for spacing */
+        }
+        #contact a {
+            color: #132043; /* Change link color */
+        }
+        #contact-form {
+            max-width: 400px;
+        }
+        #contact-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        #contact-form input,
+        #contact-form textarea {
+            width: 100%;
+            padding: 12px; /* Adjust padding */
+            margin-bottom: 20px; /* Increase spacing */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 18px; /* Adjust font size */
+            font-family: Arial, sans-serif; /* Set font-family */
+        }
+        #contact-form button {
+            width: 100%;
+            padding: 14px; /* Adjust padding */
+            background-color: #132043;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px; /* Adjust font size */
+            transition: background-color 0.3s ease;
+            font-family: Arial, sans-serif; /* Set font-family */
+        }
+        #contact-form button:hover {
+            background-color: #132043;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <section id="contact">
+            <div id="contact-left">
+                <h2>Contact Us</h2>
+                <p>Brgy. Rizal Poblacion</p>
+                <p>Lopez, Quezon</p>
+                <p>123-456-7890</p>
+                <p><a href="mailto:brgy.rizalpoblq@gmail.com">brgy.rizalpoblq@gmail.com</a></p>
+            </div>
+
+            <div id="contact-right">
+                <form id="contact-form">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="e.g. Juan A. Dela Cruz" required>
+
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your e-mail address" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Write your concern" required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        function loadHTML(url, elementId) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadHTML('reusable/header.html', 'header');
+            loadHTML('reusable/footer.html', 'footer');
+            const sessionActive = localStorage.getItem('session');
+            if (!sessionActive || sessionActive !== 'true') {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>
+    

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reusable/footer.css">
+    <link rel="stylesheet" href="reusable/header.css">
+    <title>More</title>
+    <style>
+
+        body {
+            margin: 0;
+            
+            text-align: center;
+            font-family: sans-serif;
+            color: #132043;
+            background: #FFF5EE,
+        }
+        h1 {
+           margin-bottom: 20px;
+        }
+
+        .container {
+            position: relative;
+            width: 320px;
+            margin: 100px auto 0 auto;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 1s ease;
+        }
+        .carousel img {
+            width: 320px; 
+        height: auto; 
+        }
+        #etc-info {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <h1>Landmarks</h1>
+        <div class="container">
+            <div class="carousel">
+                <img src="https://static.wixstatic.com/media/bdc22e_4f8553ae945341298406a33b39610d7d~mv2.jpg/v1/fill/w_864,h_576,al_c,lg_1,q_85,enc_auto/bdc22e_4f8553ae945341298406a33b39610d7d~mv2.jpg" alt="Image 1">
+                <img src="https://static.wixstatic.com/media/bdc22e_c3112da7765f406a87ebfe641a3cedcd~mv2.jpg/v1/fill/w_960,h_720,al_c,q_85,enc_auto/bdc22e_c3112da7765f406a87ebfe641a3cedcd~mv2.jpg" alt="Image 2">
+                <img src="https://static.wixstatic.com/media/bdc22e_d123c12e93c04a8890c25e0a597205af~mv2.jpg/v1/fill/w_960,h_720,al_c,q_85,enc_auto/bdc22e_d123c12e93c04a8890c25e0a597205af~mv2.jpg" alt="Image 3">
+                <img src="https://static.wixstatic.com/media/bdc22e_6a6f2e0e0eb5476e9a23903cae03008e~mv2.jpg/v1/fill/w_960,h_720,al_c,q_85,enc_auto/bdc22e_6a6f2e0e0eb5476e9a23903cae03008e~mv2.jpg" alt="Image 4">
+                <img src="https://static.wixstatic.com/media/bdc22e_d1fb133a64b642e0af646ea40ec08fe8~mv2.jpg/v1/fill/w_960,h_720,al_c,q_85,enc_auto/bdc22e_d1fb133a64b642e0af646ea40ec08fe8~mv2.jpg" alt="Image 5">
+                <img src="https://static.wixstatic.com/media/bdc22e_706f87f0787c49da83d5d7a2472de3e6~mv2.jpg/v1/fill/w_960,h_720,al_c,q_85,enc_auto/bdc22e_706f87f0787c49da83d5d7a2472de3e6~mv2.jpg" alt="Image 6">
+                <img src="https://static.wixstatic.com/media/bdc22e_2f991ff42b2c43e1a2c3f573096cf0ce~mv2.jpg/v1/fill/w_720,h_540,al_c,q_85,enc_auto/bdc22e_2f991ff42b2c43e1a2c3f573096cf0ce~mv2.jpg" alt="Image 7">
+                <img src="https://static.wixstatic.com/media/bdc22e_4c87c5231d8b4ab59b66f77df91a5d2a~mv2.jpg/v1/fill/w_960,h_720,al_c,q_85,enc_auto/bdc22e_4c87c5231d8b4ab59b66f77df91a5d2a~mv2.jpg" alt="Image 8">
+                <img src="https://static.wixstatic.com/media/bdc22e_97da5f17073745ea83d89a305a1ea00c~mv2.jpg/v1/fill/w_864,h_576,al_c,lg_1,q_85,enc_auto/bdc22e_97da5f17073745ea83d89a305a1ea00c~mv2.jpg" alt="Image 9">
+            </div>
+        </div>
+
+        <!-- Eastern Tayabas College Info -->
+        <div id="etc-info">
+            <h2>Eastern Tayabas College Inc.</h2>
+            <p>Eastern Tayabas College (ETC) is a non-sectarian, state college founded in 1953. Their mission is to provide quality education for the holistic development of the youth through adapting a curriculum using different strategies and using the latest framework to keep up with the development of civilization.</p>
+        </div>
+
+        <div class="container">
+            <div class="carousel">
+                <img src="https://static.wixstatic.com/media/bdc22e_bf02d7baba194e45a3cdd9b9c0b1a1a9~mv2.jpg/v1/fill/w_570,h_400,al_c,q_80,usm_0.66_1.00_0.01/bdc22e_bf02d7baba194e45a3cdd9b9c0b1a1a9~mv2.jpg" alt="Image 1">
+            </div>
+        </div>
+
+        <div id="etc-info">
+            <h2>Takoyoshi</h2>
+            <p>Authentic Japanese Takoyaki located at Brgy. Rizal Pob. Lopez, Quezon Open every day from 1 PM to 7 PM. Available for dine-in, take-out, and delivery.</p>
+        </div>
+    </main>
+
+    <div id="footer"></div> 
+
+    <script>
+        function loadHTML(url, elementId) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadHTML('reusable/header.html', 'header');
+            loadHTML('reusable/footer.html', 'footer');
+            const sessionActive = localStorage.getItem('session');
+            if (!sessionActive || sessionActive !== 'true') {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+     
+    <script>
+        const carousel = document.querySelector('.carousel');
+        let counter = 1;
+
+        setInterval(() => {
+            carousel.style.transform = `translateX(-${counter * 100}%)`;
+            counter++;
+            if (counter === 9) {
+                counter = 0;
+            }
+        }, 3000); // Change image every 3 seconds
+    </script>
+</body>
+</html>

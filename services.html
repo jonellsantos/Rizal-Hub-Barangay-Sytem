@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFFICIALS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reusable/footer.css">
+    <link rel="stylesheet" href="reusable/header.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFF5EE;
+        }
+        .officials {
+            text-align: center;
+            margin: 20px;
+        }
+        .officials h1, .officials h2, .officials h3, .officials h4 {
+            margin: 10px 0;
+        }
+        .officials-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .officials-container .punong-barangay {
+            grid-column: span 4;
+        }
+        .officials-container .secretary, .officials-container .treasurer {
+            grid-column: span 2;
+        }
+        .officials-container .kagawad {
+            grid-column: span 1;
+        }
+        .official {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+        .official img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .official p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 600px;
+            width: 90%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <section class="officials">
+            <h1>REPUBLIKA NG PILIPINAS</h1>
+            <h2>LALAWIGAN NG QUEZON</h2>
+            <h3>Sangguniang Barangay<br>BARANGAY RIZAL POBLACION</h3>
+            <h4>CY: 2023 - 2025</h4>
+            
+            <div class="officials-container">
+                <div class="official punong-barangay" data-info='{"name":"Reynaldo A. Salumbides Jr.","birthday":"July 12, 1965","age":59,"birthplace":"Lopez, Quezon","sex":"Male","civilStatus":"Married","religion":"Roman Catholic","address":"206 Embarcadeno St. Rizal Pob. Lopez, Quezon"}'>
+                    <img src="assets/officials/kap.jpg" alt="Hon. Reynaldo A. Salumbides Jr.">
+                    <p>Hon. Reynaldo A. Salumbides Jr.<br>Punong Barangay</p>
+                </div>
+                <div class="official secretary" data-info='{"name":"Victor P. Sta.Maria","birthday":"December 8, 1978","age":46,"birthplace":"Lopez, Quezon","sex":"Male","civilStatus":"Married","religion":"Roman Catholic","address":"0080 Gen. Yngente Ave. Rizal Pob Lopez, Quezon"}'>
+                    <img src="assets/officials/sta.maria.jpg" alt="Kgg. Victor P. Sta.Maria">
+                    <p>Kgg. Victor P. Sta.Maria<br>Secretary</p>
+                </div>
+                <div class="official treasurer" data-info='{"name":"Juvy M. Arago","birthday":"January 20, 1985","age":39,"birthplace":"Lopez, Quezon","sex":"Female","civilStatus":"Single","religion":"Roman Catholic","address":"Brgy. Rizal Pob. Zone-V Lopez, Quezon"}'>
+                    <img src="assets/officials/arago.jpg" alt="Kgg. CJuvy M. Arago">
+                    <p>Kgg. Juvy M. Arago<br>Treasurer</p>
+                </div>
+                <div class="official kagawad" data-info='{"name":"Victoria Lorna P. Villasoto","birthday":"December 23, 1969","age":55,"birthplace":"Lopez, Quezon","sex":"Female","civilStatus":"Married","religion":"Roman Catholic","address":"0101 Gen. Yngente Ave. St. Rizal Pob. Lopez, Quezon"}'>
+                    <img src="assets/officials/villasoto.jpg" alt="Kgg. Victoria Lorna P. Villasoto">
+                    <p>Kgg. Victoria Lorna P. Villasoto<br>Kagawad</p>
+                </div>
+                <div class="official kagawad" data-info='{"name":"Glorife Erandio Montero","birthday":"December 19, 1965","age":67,"birthplace":"Lopez, Quezon","sex":"Female","civilStatus":"Married","religion":"Roman Catholic","address":"0080 Gen. Yngente St. Rizal Pob. Lopez, Quezon"}'>
+                    <img src="assets/officials/montero.jpg" alt="Kgg. Glorife E. Montero">
+                    <p>Kgg. Glorife E. Montero<br>Kagawad</p>
+                </div>
+                <div class="official kagawad" data-info='{"name":"Christopher Ace S. Tamayo","birthday":"January 20, 1985","age":38,"birthplace":"Lopez, Quezon","sex":"Male","civilStatus":"Single","religion":"Roman Catholic","address":"San Isidro St. Rizal Pob. Lopez, Quezon"}'>
+                    <img src="assets/officials/tamayo.jpg" alt="Kgg. Christopher Ace S. Tamayo">
+                    <p>Kgg. Christopher Ace S. Tamayo<br>Kagawad</p>
+                </div>
+                <div class="official kagawad" data-info='{"name":"Gina R. Salumbides","birthday":"August 1, 1964","age":58,"birthplace":"Lopez, Quezon","sex":"Female","civilStatus":"Married","religion":"Roman Catholic","address":"46 Gen. Yngente (Anda St.) Brgy. Rizal Pob. Lopez, Quezon"}'>
+                    <img src="assets/officials/salumbides.jpg" alt="Kgg. Gina R. Salumbides">
+                    <p>Kgg. Gina R. Salumbides<br>Kagawad</p>
+                </div>
+                <div class="official kagawad" data-info='{"name":"Nimfa V. Villanueva","birthday":"October 30, 1962","age":62,"birthplace":"Lopez, Quezon","sex":"Female","civilStatus":"Married","religion":"Roman Catholic","address":"87 San Francisco St. Brgy. Rizal Pob Lopez, Quezon"}'>
+                    <img src="assets/officials/villanueva.jpg" alt="Kgg. Nimfa V. Villanueva">
+                    <p>Kgg. Nimfa V. Villanueva<br>Kagawad</p>
+                </div>
+                <div class="official kagawad" data-info='{"name":"Elsa A. Pilarca","birthday":"June 14, 1972","age":50,"birthplace":"Lopez, Quezon","sex":"Female","civilStatus":"Married","religion":"Roman Catholic","address":"Brgy. Rizal Pob Lopez, Quezon"}'>
+                    <img src="assets/officials/pilarca.jpg" alt="Kgg. Elsa A. Pilarca">
+                    <p>Kgg. Elsa A. Pilarca<br>Kagawad</p>
+                </div>
+                <div class="official kagawad" data-info='{"name":"Leonida R. Rondario","birthday":"May 29, 1952","age":70,"birthplace":"Lopez, Quezon","sex":"Female","civilStatus":"Widowed","religion":"Roman Catholic","address":"0210 Gen. Yngente St. Rizal Pob. Lopez, Quezon"}'>
+                    <img src="assets/officials/rondario.jpg" alt="Kgg. Leonida R. Rondario">
+                    <p>Kgg. Leonida R. Rondario<br>Kagawad</p>
+                </div>
+                <div class="official kagawad" data-info='{"name":"Benz Jim F. Reyes","birthday":"October 11, 2000","age":23,"birthplace":"Lopez, Quezon","sex":"Male","civilStatus":"Single","religion":"Adventist","address":"Brgy. Rizal Pob. Lopez, Quezon"}'>
+                    <img src="assets/officials/sk.jpg" alt="Kgg. Benz Jim F. Reyes">
+                    <p>Kgg. Benz Jim F. Reyes<br>Sk Chairperson</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+    <script>
+        function loadHTML(url, elementId) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadHTML('reusable/header.html', 'header');
+            loadHTML('reusable/footer.html', 'footer');
+            const sessionActive = localStorage.getItem('session');
+            if (!sessionActive || sessionActive !== 'true') {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="official-name"></h2>
+            <p><strong>Birthday:</strong> <span id="official-birthday"></span></p>
+            <p><strong>Age:</strong> <span id="official-age"></span></p>
+            <p><strong>Birthplace:</strong> <span id="official-birthplace"></span></p>
+            <p><strong>Sex:</strong> <span id="official-sex"></span></p>
+            <p><strong>Civil Status:</strong> <span id="official-civilStatus"></span></p>
+            <p><strong>Religion:</strong> <span id="official-religion"></span></p>
+            <p><strong>Address:</strong> <span id="official-address"></span></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById("myModal");
+            const span = document.getElementsByClassName("close")[0];
+            const officials = document.querySelectorAll('.official');
+
+            function openModal(official) {
+                const info = JSON.parse(official.dataset.info);
+                document.getElementById("official-name").innerText = info.name;
+                document.getElementById("official-birthday").innerText = info.birthday;
+                document.getElementById("official-age").innerText = info.age;
+                document.getElementById("official-birthplace").innerText = info.birthplace;
+                document.getElementById("official-sex").innerText = info.sex;
+                document.getElementById("official-civilStatus").innerText = info.civilStatus;
+                document.getElementById("official-religion").innerText = info.religion;
+                document.getElementById("official-address").innerText = info.address;
+                modal.style.display = "flex";
+            }
+
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            officials.forEach(function(official) {
+                official.addEventListener('click', function() {
+                    openModal(official);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

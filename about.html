@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reusable/footer.css">
+    <link rel="stylesheet" href="reusable/header.css">
+    <style>
+        #header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Ensure it appears above other content */
+        }
+
+        main {
+            margin-bottom: 100px; /* Reserve space for the footer */
+            padding: 20px;
+        }
+
+        main img {
+            width: 100%;
+            display: block; 
+            max-height: 500px;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 35%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+            text-align: justify;
+            color: black;
+            z-index: 10; /* Ensure it appears above the image */
+        }
+
+        .image-overlay h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .image-overlay p {
+            font-size: 16px;
+        }
+
+        .card {
+            background-color: #f8f9fa;
+            border: 1px solid #e7e7e7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .card a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="image-overlay">
+            <h2>A brief History of Lopez, Quezon</h2>
+            <p><strong>The history of the Municipality of Lopez reflects the path its leaders took to its present development. A prosperous and one of the first class municipality in the Fourth Congressional District of Quezon Province, Lopez has a total land area of 39,510 hectares, and now comprising of 88 rural barangays and seven (7) urban barangays with a total population of 95,167 in 2015.</strong></p>
+            <p><strong>The original location of the settlement was in the marshy mouth of a sedate river, which was founded by the descendants of Datu Dumangsil and Balingsula of the Kalilayan Kingdom. Due to the frequent plundering and terrorism of the pirates, the colony was transferred to the present town’s location.</strong></p>
+        </div>
+        <img src="https://static.wixstatic.com/media/bdc22e_5f66620d1f224a88b985d240f924138e~mv2.jpg/v1/fill/w_1188,h_556,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/bdc22e_5f66620d1f224a88b985d240f924138e~mv2.jpg" alt="Description of the image">
+
+        <div class="card">
+            <h3>Get to Know Us</h3>
+            <p>The barangay Rizal Poblacion is derived from the name of our Hero, Dr. Jose P. Rizal. It is located in the Poblacion of Lopez town, Quezon crossed by Maharlika Highway or Real Street and now Gen. Vera Ave. The part of the barangay is in the front or North direction of the Town Government Building. On its western side is Barangay Rizal and the Pamilihang Bayan and on its eastern side is Barangay Magsaysay which is crossed by the Talolong River which served as between Brgy Rizal Pob and Brgy Magsaysay; and in the North is also crossed by the said Talolong River which separates between Brgy. Rizal Pob and Brgy. Guihay. <a target="_blank" href="/assets/kasaysayan-rizal.pdf">Read more</a></p>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        function loadHTML(url, elementId) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadHTML('reusable/header.html', 'header');
+            loadHTML('reusable/footer.html', 'footer');
+            const sessionActive = localStorage.getItem('session');
+            if (!sessionActive || sessionActive !== 'true') {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>

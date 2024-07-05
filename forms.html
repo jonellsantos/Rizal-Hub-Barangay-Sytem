@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reusable/footer.css">
+    <link rel="stylesheet" href="reusable/header.css">
+    <style>
+        .three-columns {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .three-columns div {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            color: white; /* Text color for better visibility on image background */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .three-columns .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 94%;
+            background: rgba(4, 32, 64, 0.8); /* Overlay to improve text readability */
+        }
+        .three-columns .content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div style="text-align: center;">
+            <h1>Forms</h1>
+        </div>
+
+        <!-- New Section for three columns -->
+        <section class="three-columns">
+            <div style="background-image: url('/assets/permit.jpg');">
+                <div class="overlay"></div>
+                <div class="content">
+                    <img src="/assets/permit.jpg" alt="Image 1" style="height: 400px; width: 300px; box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4); border: 5px solid #051b44;">
+                    <h2>Barangay Permit</h2>
+                    <p id="fill-up-permit" style="margin-top: -1px; display: inline-block; padding: 10px 40px; background-color: white; border-radius: 25px; border: 2px solid #000; text-align: center; cursor: pointer; color: black">Fill Up</p>
+                    <p><a target="_blank" href="/assets/rizal-barangay-permit .pdf" style="text-decoration: underline; color: white; margin-top: 1px">Download the file</a></p>
+                </div>
+            </div>
+            <div style="background-image: url('/assets/indigency.jpg');">
+                <div class="overlay"></div>
+                <div class="content">
+                    <img src="/assets/indigency.jpg" alt="Image 1" style="height: 400px; width: 300px; box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4); border: 5px solid #051b44;">
+                    <h2>Barangay Indigency</h2>
+                    <p id="fill-up-indigency" style="margin-top: -1px; display: inline-block; padding: 10px 40px; background-color: white; border-radius: 25px; border: 2px solid #000; text-align: center; cursor: pointer; color: black">Fill Up</p>
+                    <p><a target="_blank" href="/assets/rizal_indegency final.pdf" style="text-decoration: underline; color: white; margin-top: 1px">Download the file</a></p>
+                </div>
+            </div>
+            <div style="background-image: url('/assets/residency.jpg');">
+                <div class="overlay"></div>
+                <div class="content">
+                    <img src="/assets/residency.jpg" alt="Image 1" style="height: 400px; width: 300px; box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4); border: 5px solid #051b44;">
+                    <h2>Barangay Residency</h2>
+                    <p id="fill-up-residency" style="margin-top: -1px; display: inline-block; padding: 10px 40px; background-color: white; border-radius: 25px; border: 2px solid #000; text-align: center; cursor: pointer; color: black">Fill Up</p>
+                    <p><a target="_blank" href="/assets/rizal_certificate of residency.pdf" style="text-decoration: underline; color: white; margin-top: 1px">Download the file</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section -->
+        <section class="two-columns">
+            <div class="process">
+                <h2>Process of Getting Document(s) If Printed by Your Own</h2>
+                <ol>
+                    <li>Download the online document portal by clicking on the download file button.</li>
+                    <li>Fill out the required fields with your personal information manually.</li>
+                    <li>Print your document(s) supplied to you via email.</li>
+                    <li>Compile the necessary documents that must be presented. They may contain legitimate identification cards, proof of residence, and other supplementary materials.</li>
+                    <li>Visit the barangay office to obtain payment, the barangay seal, and the signature of the barangay captain. Please bring the appropriate paperwork.</li>
+                    <li>Look for the secretary or designated individual responsible for handling your document application. Send the appropriate money and other documents to conclude the process.</li>
+                    <li>Wait for the release of your desired document following processing.</li>
+                </ol>
+            </div>
+            <div class="process">
+                <h2>Process of Getting Document(s) If You Cannot Print on Your Own</h2>
+                <ol>
+                    <li>Access the online document portal by clicking on the provided link.</li>
+                    <li>Fill out the required fields with your personal information manually.</li>
+                    <li>Visit the Barangay to obtain the required document(s).</li>
+                    <li>Compile the necessary documents that must be presented. They may contain legitimate identification cards, proof of residence, and other supplementary materials.</li>
+                    <li>Visit the barangay office to obtain payment, the barangay seal, and the signature of the barangay captain. Be sure to carry the necessary documentation.</li>
+                    <li>Look for the secretary or designated individual responsible for handling your document application. Send the appropriate money and other documents to conclude the process.</li>
+                    <li>Wait for the release of your desired document following processing.</li>
+                </ol>
+            </div>
+        </section>
+        <br><br>
+
+        <style>
+            .two-columns {
+                display: flex;
+                justify-content: space-between;
+                gap: 40px;
+                margin: 0 20px; /* Add margin to the sides */
+            }
+
+            .process {
+                flex: 1;
+                background-color: #cddae387; /* Add background color for clarity */
+                padding: 20px; /* Add padding for spacing */
+                border-radius: 8px; /* Add border-radius for rounded corners */
+            }
+
+            .process h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .process ol {
+                padding-left: 20px;
+            }
+
+            .process ol li {
+                margin-bottom: 10px;
+            }
+        </style>
+    </main>
+
+    <div id="footer"></div>
+  
+    <script>
+        function loadHTML(url, elementId) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        function redirectToForm(url) {
+            window.location.href = url;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadHTML('reusable/header.html', 'header');
+            loadHTML('reusable/footer.html', 'footer');
+            const sessionActive = localStorage.getItem('session');
+            if (!sessionActive || sessionActive !== 'true') {
+                window.location.href = 'index.html';
+            }
+
+            document.getElementById('fill-up-permit').addEventListener('click', () => {
+                redirectToForm('https://forms.gle/4xnGc9D9BTSEg8kr7');
+            });
+
+            document.getElementById('fill-up-indigency').addEventListener('click', () => {
+                redirectToForm('https://forms.gle/Fmiv6FNrYsGbTody6');
+            });
+
+            document.getElementById('fill-up-residency').addEventListener('click', () => {
+                redirectToForm('https://forms.gle/HrtbdBqW2HjWtiiPA');
+            });
+        });
+    </script>
+</body>
+</html>
